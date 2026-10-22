@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/*
+ * UniMart brand tokens, taken from the landing page (landing/original-index.html):
+ *   --blue  #7ad1fe  hero sky        --cream #faf6eb  page background
+ *   --yel   #fdfab9  soft yellow     --gold  #ffd23f  accent
+ *   #ffe34d login button             #fbf8ee nav / window surface
+ *   #000 ink with hard offset shadows; #cbcbcb window title bars
+ * The shopping UI keeps these colours and proportions (sky bands, cream
+ * surfaces, black ink, yellow for primary actions) with readable sans type.
+ */
+@theme {
+  --color-sky: #7ad1fe;
+  --color-sky-soft: #d7f0fe;
+  --color-sky-deep: #0b5f8a;
+  --color-cream: #faf6eb;
+  --color-paper: #fbf8ee;
+  --color-butter: #fdfab9;
+  --color-gold: #ffd23f;
+  --color-sun: #ffe34d;
+  --color-ochre: #e0a21b;
+  --color-ink: #000000;
+  --color-ink-soft: #3b3b3b;
+  --color-muted: #5f5f5f;
+  --color-line: #d9d4c4;
+  --color-chrome: #cbcbcb;
+  --color-danger: #b42318;
+  --color-danger-soft: #fde8e6;
+  --color-ok: #146c2e;
+  --color-ok-soft: #e3f5e6;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+  --font-pixel: "Pix Chicago", "PixChicago", var(--font-pixelify), "Courier New", monospace;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+
+  --shadow-hard: 3px 3px 0 #000;
+  --shadow-hard-sm: 2px 2px 0 #000;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    border: 2px solid #000;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.08s, box-shadow 0.08s, background-color 0.12s;
+  }
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+  .btn-primary {
+    background: var(--color-sun);
+    color: #000;
+    box-shadow: var(--shadow-hard-sm);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-gold);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .btn-secondary {
+    background: #fff;
+    color: #000;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-paper);
+  }
+  .btn-dark {
+    background: #000;
+    color: #fff;
+  }
+  .btn-dark:hover:not(:disabled) {
+    background: var(--color-ink-soft);
+  }
+  .btn-danger {
+    background: #fff;
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+  }
+  .btn-danger:hover:not(:disabled) {
+    background: var(--color-danger-soft);
+  }
+  .btn-sm {
+    min-height: 2.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+  .btn-ghost {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .btn-ghost:hover {
+    background: rgb(0 0 0 / 0.06);
+  }
+  .card {
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-line);
+    background: #fff;
+  }
+  .panel {
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+    background: var(--color-paper);
+    box-shadow: var(--shadow-hard);
+  }
+  .field-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  .field-hint {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+  .field-error {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-danger);
+  }
+  .input {
+    display: block;
+    width: 100%;
+    min-height: 2.75rem;
+    border-radius: 0.375rem;
+    border: 2px solid rgb(0 0 0 / 0.75);
+    background: #fff;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    color: #000;
+  }
+  .input::placeholder {
+    color: #777;
+  }
+  .input:focus {
+    border-color: #000;
+    outline: 3px solid var(--color-sky);
+    outline-offset: 0;
+  }
+  .input[aria-invalid="true"] {
+    border-color: var(--color-danger);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    background: #fff;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .badge-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    background: var(--color-sky-soft);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-sky-deep);
+  }
+  .badge-demo {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-ochre);
+    background: var(--color-butter);
+    padding: 0.0625rem 0.375rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .h-section {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  @media (width >= 40rem) {
+    .h-section {
+      font-size: 1.25rem;
+    }
+  }
+  .link {
+    font-weight: 500;
+    color: var(--color-sky-deep);
+    text-underline-offset: 2px;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+}
