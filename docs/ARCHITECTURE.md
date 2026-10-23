@@ -41,7 +41,7 @@ are set in `next.config.ts`.
 Tests: `npm run test:db` runs the real migrations in an embedded Postgres (PGlite) on a Supabase stub and
 exercises these rules as anonymous, normal, unverified, suspended, moderator and admin users (51 tests,
 including one regression test per audit finding). `npm run test:unit` covers redirects, money, search
-queries, error mapping, CSP, env validation and photo re-encoding (30 tests).
+queries, error mapping, CSP, env validation, photo re-encoding and form validation (39 tests).
 
 ## Data model
 

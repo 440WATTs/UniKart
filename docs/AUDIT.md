@@ -196,3 +196,12 @@ restore rehearsal, and unreviewed legal documents.
 **Next step to reach "Ready with documented limitations":** create a staging Supabase project, apply the migrations,
 complete the DEPLOYMENT.md checklist, run the post-deploy smoke test and two-user offer/messaging journeys, and
 rehearse a restore. That could be done in a closed beta with NIT Sikkim volunteers.
+
+## 11. Follow-up: zod advisory (2026-10-24)
+
+A high-severity advisory for `zod` < 4.6.6 (GHSA-mrhx-c7xc-m3w5, memory exhaustion on oversized constrained
+collections) was published after this audit and failed the CI `npm audit` step. Fixed by upgrading `zod`
+3.25.76 → 4.6.7: the only breaking usage was `z.literal(..., { errorMap })` (now `{ error }`); deprecated
+`.email()` calls moved to `z.email()`. Auth and contact schemas now live in `src/lib/validation.ts` with
+unit tests (`tests/unit/validation.test.ts`, 9 tests). Results: `npm audit --omit=dev` 0 vulnerabilities,
+lint/typecheck clean, 39/39 unit and 51/51 database tests, production and preview builds pass.

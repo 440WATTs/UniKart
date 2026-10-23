@@ -1,23 +1,18 @@
 "use server";
 import { redirect } from "next/navigation";
-import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { env } from "@/lib/env";
 import { safeNext } from "@/lib/format";
 import { logError } from "@/lib/log";
 import { allowAll, clientIp, RATE_LIMITED } from "@/lib/rate-limit";
 import type { ActionState } from "@/lib/types";
+import { emailField, fieldErrors, loginSchema, passwordSchema, signupSchema } from "@/lib/validation";
 
 /**
  * Links in emails and OAuth redirects always use the configured site URL,
  * never request headers (which a client can set): prevents reset-link poisoning.
  */
 const siteUrl = () => env.siteUrl.replace(/\/+$/, "");
-
-const loginSchema = z.object({
-  email: z.string().trim().toLowerCase().email("Enter a valid email address.").max(254),
-  password: z.string().min(1, "Enter your password.").max(200),
-});
 
 export async function login(_: ActionState, form: FormData): Promise<ActionState> {
   const parsed = loginSchema.safeParse({ email: form.get("email"), password: form.get("password") });
@@ -35,20 +30,6 @@ export async function login(_: ActionState, form: FormData): Promise<ActionState
   redirect(safeNext(form.get("next") as string | null));
 }
 
-const passwordSchema = z
-  .string()
-  .min(8, "Use at least 8 characters.")
-  .max(72)
-  .regex(/[A-Za-z]/, "Include at least one letter.")
-  .regex(/\d/, "Include at least one number.");
-
-const signupSchema = z.object({
-  fullName: z.string().trim().min(2, "Enter your full name.").max(120),
-  email: z.string().trim().toLowerCase().email("Enter a valid email address.").max(254),
-  password: passwordSchema,
-  terms: z.literal("on", { errorMap: () => ({ message: "Please accept the terms to continue." }) }),
-});
-
 export async function signup(_: ActionState, form: FormData): Promise<ActionState> {
   const parsed = signupSchema.safeParse({
     fullName: form.get("fullName"),
@@ -57,9 +38,7 @@ export async function signup(_: ActionState, form: FormData): Promise<ActionStat
     terms: form.get("terms"),
   });
   if (!parsed.success) {
-    const fieldErrors: Record<string, string> = {};
-    for (const i of parsed.error.issues) fieldErrors[String(i.path[0])] ??= i.message;
-    return { error: "Please fix the highlighted fields.", fieldErrors };
+    return { error: "Please fix the highlighted fields.", fieldErrors: fieldErrors(parsed.error) };
   }
   if (!(await allowAll([[`signup:ip:${await clientIp()}`, 10, 3600]]))) return { error: RATE_LIMITED };
   const supabase = await createClient();
@@ -102,7 +81,7 @@ export async function signInWithGoogle(form: FormData) {
 }
 
 export async function requestPasswordReset(_: ActionState, form: FormData): Promise<ActionState> {
-  const email = z.string().trim().toLowerCase().email().max(254).safeParse(form.get("email"));
+  const email = emailField().safeParse(form.get("email"));
   if (!email.success) return { error: "Enter a valid email address." };
   const done: ActionState = { ok: true, message: "If an account exists for that email, a reset link is on its way." };
   if (!(await allowAll([[`reset:ip:${await clientIp()}`, 10, 3600], [`reset:email:${email.data}`, 3, 3600]]))) return { error: RATE_LIMITED };

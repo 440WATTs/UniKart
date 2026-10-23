@@ -7,7 +7,7 @@ _Last updated 2026-10-23. The production-readiness audit and its results are in 
 | Check | Result |
 | --- | --- |
 | `npm run test:db`: migrations + RLS + functions in PGlite, as anon / users / moderator / admin | **51/51 pass** |
-| `npm run test:unit`: redirects, money, search, errors, CSP, env validation, photo re-encoding | **30/30 pass** |
+| `npm run test:unit`: redirects, money, search, errors, CSP, env validation, photo re-encoding, form validation | **39/39 pass** |
 | `npm audit --omit=dev` | 0 vulnerabilities |
 | `npm run typecheck` | pass |
 | `npm run lint` | pass |

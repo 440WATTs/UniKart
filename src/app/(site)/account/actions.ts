@@ -3,6 +3,7 @@ import { createHmac, randomInt } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { emailField } from "@/lib/validation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import { getInstitute, getViewer } from "@/lib/session";
@@ -94,7 +95,7 @@ export async function requestInstituteCode(_: ActionState, form: FormData): Prom
   const viewer = await getViewer();
   if (!viewer) return { error: "Please log in again." };
   const instituteId = String(form.get("instituteId") ?? "");
-  const email = z.string().trim().toLowerCase().email().max(254).safeParse(form.get("email"));
+  const email = emailField().safeParse(form.get("email"));
   if (!email.success) return { error: "Enter your full institute email address." };
   if (!(await allowAll([[`code:ip:${await clientIp()}`, 15, 3600]]))) return { error: RATE_LIMITED };
   const institute = await getInstitute(instituteId);
