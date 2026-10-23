@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fmessages\u002F[id]","\u002Fproduct\u002F[id]","\u002Fsell\u002F[id]\u002Fedit"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
