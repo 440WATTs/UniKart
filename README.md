@@ -26,6 +26,20 @@ Next.js 15 + Supabase (Postgres with row-level security, Auth with Google, Stora
 | `npm run make-admin -- <email>` | Grant the first admin role |
 | `npm run landing` | Rebuild `public/landing.html` from `landing/source-index.html` |
 
+## UI preview (GitHub Pages)
+
+A static, demo-data preview of the landing page and marketplace is published at
+<https://440watts.github.io/UniKart/> (landing) and <https://440watts.github.io/UniKart/preview/> (marketplace).
+GitHub Pages can't run the real app (it needs a server and Supabase), so the preview uses
+`preview/src` demo data and every action shows "Preview only".
+
+```bash
+npm run preview:build
+```
+
+The site is written to `.preview-build/site/` and published from the `gh-pages` branch
+(see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md#ui-preview-on-github-pages)).
+
 ## Docs
 
 - [Setup, Google OAuth, deployment](docs/SETUP.md)

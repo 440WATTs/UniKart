@@ -111,3 +111,18 @@ Then in a browser:
 - Remaining dev-only advisories (ESLint plugin chain) don't ship to users; re-check on each Next upgrade.
 - The build downloads Google Fonts through `next/font`; a transient fetch failure fails the build (seen once).
   Retry, or self-host the fonts with `next/font/local` to remove the dependency.
+
+## UI preview on GitHub Pages
+
+The repository's GitHub Pages site serves a static preview from the `gh-pages` branch: the landing page at
+`/UniKart/` and a demo-data build of the marketplace at `/UniKart/preview/`. It is **not** the production app.
+
+To update it after changing the app or landing page:
+
+```bash
+npm run preview:build
+```
+
+Then publish `.preview-build/site/` to `gh-pages` (replacing its contents) and push. `scripts/build-preview.py`
+asserts every patch it applies, so if the app changes in a way the preview can't follow, the build stops with
+the file and text it expected.
