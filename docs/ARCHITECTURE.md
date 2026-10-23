@@ -4,7 +4,7 @@
 
 - **Next.js 15 (App Router, TypeScript, Tailwind CSS 4)**. Server components fetch data; server actions handle mutations.
 - **Supabase**: Postgres (data + authorization), Auth (email/password, Google OAuth), Storage (photos), Realtime (chat).
-- The original landing page is a single static HTML file, kept as-is and served at `/` (`next.config.ts` rewrite).
+- The landing page is a single static HTML file (only the product name changed), served at `/` (`next.config.ts` rewrite).
 
 Why: the existing project was a single static `index.html` with no framework, so there was no stack to preserve.
 Next.js + Supabase was chosen as a conventional, typed setup that hosts the static landing page unchanged.

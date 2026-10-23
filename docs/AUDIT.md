@@ -1,4 +1,4 @@
-# UniMart production-readiness audit
+# UniKart production-readiness audit
 
 _Audit date: 2026-10-22. Scope: the whole repository (Next.js 15 app, Supabase migration, scripts, docs)._
 _Remediation completed 2026-10-23; status per finding in the "Status" column, details in §5–§10._
@@ -161,7 +161,7 @@ restore, Google OAuth round-trip, email delivery.
 LCP could not be measured: the browser pane was backgrounded, so Chrome recorded no LCP entries. Local numbers
 have no network latency and say nothing about real mobile LCP/INP. **Risk:** the landing page's 567 KB of inline
 base64 images is likely to miss LCP ≤ 2.5 s on slow mobile networks. Fix (changes the landing file): move the images
-to separate cacheable files. Not done here, to keep the landing page byte-for-byte as supplied.
+to separate cacheable files. Not done here, to keep the landing page as supplied.
 
 ## 8. Deployment and rollback
 

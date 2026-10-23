@@ -5,10 +5,10 @@ export function Footer() {
     <footer className="mt-16 border-t-[3px] border-ink bg-paper pb-20 md:pb-0">
       <div className="container-page grid gap-8 py-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-pixel text-xl font-bold">UniMart</p>
+          <p className="font-pixel text-xl font-bold">UniKart</p>
           <p className="mt-2 text-muted">Your Campus. Your Marketplace.</p>
           <p className="mt-3 text-xs text-muted">
-            UniMart is an independent student project. It is not operated, affiliated with or endorsed by NIT Sikkim or any
+            UniKart is an independent student project. It is not operated, affiliated with or endorsed by NIT Sikkim or any
             other institute.
           </p>
         </div>

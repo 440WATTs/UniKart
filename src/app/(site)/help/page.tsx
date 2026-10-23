@@ -6,7 +6,7 @@ export const metadata = { title: "Help & Safety" };
 const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
   {
     id: "how",
-    title: "How UniMart works",
+    title: "How UniKart works",
     body: (
       <>
         <p>
@@ -17,7 +17,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
           <strong>Selling:</strong> verify your institute membership → add photos, a title, price and condition → preview → publish →
           answer messages → mark the item sold.
         </p>
-        <p>UniMart does not handle payments, delivery or refunds. Deals are between the two members.</p>
+        <p>UniKart does not handle payments, delivery or refunds. Deals are between the two members.</p>
       </>
     ),
   },
@@ -39,7 +39,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     title: "Avoiding scams",
     body: (
       <ul className="list-disc space-y-1 pl-5">
-        <li>Never share OTPs, UPI PINs, passwords or bank details. UniMart staff will never ask for them.</li>
+        <li>Never share OTPs, UPI PINs, passwords or bank details. UniKart staff will never ask for them.</li>
         <li>Be wary of prices that are far too low, urgent pressure, or requests to move to another app immediately.</li>
         <li>Never pay a “deposit” or “delivery fee” to reserve an item.</li>
         <li>Don&apos;t scan QR codes to “receive” money; receiving money never needs your PIN.</li>
@@ -70,7 +70,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         Use <strong>Report listing</strong> on any product page, or <strong>Report this member</strong> in a chat. You can also block a
-        member from the chat menu. Reports go to UniMart moderators. If you are in danger, contact campus security or call 112.
+        member from the chat menu. Reports go to UniKart moderators. If you are in danger, contact campus security or call 112.
       </p>
     ),
   },
@@ -79,9 +79,9 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     title: "What the verified badge means",
     body: (
       <p>
-        A <strong>Verified Member</strong> badge means UniMart confirmed the person belongs to that institute, usually through their
+        A <strong>Verified Member</strong> badge means UniKart confirmed the person belongs to that institute, usually through their
         institute email. It is not a guarantee of honesty or of an item&apos;s quality, and it doesn&apos;t mean the institute endorses
-        UniMart.
+        UniKart.
       </p>
     ),
   },
@@ -92,7 +92,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
       <p>
         On listings marked “offers accepted”, you can propose a lower price. The seller can accept, decline or counter. An accepted
         offer reserves the item while you arrange to meet; it is not a payment and not a binding contract. Offers expire after 48
-        hours. UniMart does not run auctions.
+        hours. UniKart does not run auctions.
       </p>
     ),
   },
@@ -101,7 +101,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     title: "Privacy",
     body: (
       <p>
-        Your email address and phone number are never shown on listings. Use UniMart Messages for first contact and only share
+        Your email address and phone number are never shown on listings. Use UniKart Messages for first contact and only share
         other details when you&apos;re comfortable. See the <Link href="/privacy" className="link">privacy notice</Link>.
       </p>
     ),
@@ -111,7 +111,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     title: "Platform limitations",
     body: (
       <p>
-        UniMart is an independent student project, not a service of NIT Sikkim. It doesn&apos;t inspect items, guarantee
+        UniKart is an independent student project, not a service of NIT Sikkim. It doesn&apos;t inspect items, guarantee
         transactions, handle payments or resolve disputes beyond removing content and suspending accounts that break the rules.
       </p>
     ),

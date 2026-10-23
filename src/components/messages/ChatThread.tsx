@@ -21,7 +21,7 @@ const OFFER_ERRORS: Record<string, string> = {
   invalid_amount: "Enter an amount above ₹0 and no higher than the asking price.",
   blocked: "You can't message this member.",
   not_participant: "You're not part of this conversation.",
-  participant_left: "The other member has left UniMart.",
+  participant_left: "The other member has left UniKart.",
   account_suspended: "Your account is suspended.",
 };
 const explain = (msg: string) => OFFER_ERRORS[Object.keys(OFFER_ERRORS).find((k) => msg.includes(k)) ?? ""] ?? "Something went wrong. Please try again.";

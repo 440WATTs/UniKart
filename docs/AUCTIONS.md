@@ -1,6 +1,6 @@
 # Auction-style listings (not implemented, disabled)
 
-UniMart v1 has fixed-price listings and optional offers only. There is no bidding, winner selection, deposit,
+UniKart v1 has fixed-price listings and optional offers only. There is no bidding, winner selection, deposit,
 bid fee, paid entry, prize, or automated payment, and `app_settings.auctions_enabled` is `false`.
 
 Before any auction feature is built, obtain qualified Indian legal advice covering consumer protection, contract,

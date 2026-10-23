@@ -53,7 +53,7 @@ export default async function InstitutePage() {
                   {m.institute_email ? ` (${m.institute_email})` : m.method === "manual_review" ? " (reviewed by a moderator)" : ""}.
                 </p>
                 <p className="mt-2 text-muted">
-                  The badge shows that UniMart checked your institute membership. It doesn&apos;t mean UniMart or the institute vouches
+                  The badge shows that UniKart checked your institute membership. It doesn&apos;t mean UniKart or the institute vouches
                   for any trade.
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default async function InstitutePage() {
       <section className="card p-5 text-sm">
         <h2 className="font-bold">Other campuses</h2>
         <p className="mt-1 text-ink-soft">
-          UniMart currently runs at {institute?.display_name ?? "one institute"} only. Other institutes will be added through a controlled
+          UniKart currently runs at {institute?.display_name ?? "one institute"} only. Other institutes will be added through a controlled
           onboarding process{upcoming.length ? ` (${upcoming.map((i) => i.display_name).join(", ")} in preparation)` : ""}.
           Changing institute will always need a new verification.
         </p>

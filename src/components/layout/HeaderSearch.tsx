@@ -3,7 +3,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { SearchIcon } from "@/components/icons";
 
-const RECENT_KEY = "unimart:recent-searches";
+const RECENT_KEY = "unikart:recent-searches";
 
 function readRecent(): string[] {
   try {
@@ -90,7 +90,7 @@ export function HeaderSearch({ className = "" }: { className?: string }) {
       }}
     >
       <label htmlFor={`${listId}-input`} className="sr-only">
-        Search UniMart
+        Search UniKart
       </label>
       <div className="flex h-11 overflow-hidden rounded-md border-2 border-ink bg-white focus-within:outline-3 focus-within:outline-sky">
         <input

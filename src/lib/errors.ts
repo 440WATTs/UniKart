@@ -18,7 +18,7 @@ export const DB_ERRORS: Record<string, string> = {
   offer_not_pending: "This offer has already been answered.",
   offer_expired: "This offer has expired.",
   account_suspended: "Your account is suspended.",
-  participant_left: "The other member has left UniMart.",
+  participant_left: "The other member has left UniKart.",
   not_participant: "You're not part of this conversation.",
   listing_removed_by_moderator: "This listing was removed by a moderator and can't be changed.",
   too_many_images: "That's more photos than allowed.",

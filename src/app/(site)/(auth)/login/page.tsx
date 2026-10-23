@@ -15,7 +15,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return (
     <AuthShell
       title="Log in"
-      subtitle={next === "/sell" ? "Log in to list an item for sale." : "Welcome back to UniMart."}
+      subtitle={next === "/sell" ? "Log in to list an item for sale." : "Welcome back to UniKart."}
     >
       {sp.error && (
         <p role="alert" className="mb-4 rounded-md border-2 border-danger bg-danger-soft px-3 py-2 text-sm text-danger">
@@ -26,7 +26,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       <OrDivider />
       <LoginForm next={next} />
       <p className="mt-6 text-center text-sm">
-        New to UniMart?{" "}
+        New to UniKart?{" "}
         <Link href={`/signup?next=${encodeURIComponent(next)}`} className="link">
           Create an account
         </Link>

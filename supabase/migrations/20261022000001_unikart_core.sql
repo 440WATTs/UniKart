@@ -1,4 +1,4 @@
--- UniMart core schema
+-- UniKart core schema
 -- Institutes, memberships, listings, messaging, offers, notifications,
 -- reports, moderation and audit. Authorization is enforced here with
 -- row-level security, column grants and SECURITY DEFINER functions;

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Build public/landing.html from landing/original-index.html.
+"""Build public/landing.html from landing/source-index.html.
 
-The original landing page is kept byte-for-byte in landing/original-index.html.
+The landing page source is landing/source-index.html: the original page from the
+UniKart repository, with the product name changed from UniMart to UniKart.
 This script makes the minimum changes needed to connect it to the marketplace:
 
   * removes the demo login dialog (it "logged in" anyone via localStorage)
   * replaces the navigation script so Shop / Sell / Categories / Login go to
     real routes and the account button reflects the real Supabase session
   * wires the hero icons, category tiles and the sample card CTA to routes
-  * extracts the brand logo to public/brand/unimart-logo.png for the app
+  * extracts the brand logo to public/brand/unikart-logo.png for the app
 
 Run: python3 scripts/build-landing.py
 """
@@ -17,9 +18,9 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SRC = ROOT / "landing" / "original-index.html"
+SRC = ROOT / "landing" / "source-index.html"
 OUT = ROOT / "public" / "landing.html"
-LOGO = ROOT / "public" / "brand" / "unimart-logo.png"
+LOGO = ROOT / "public" / "brand" / "unikart-logo.png"
 
 html = SRC.read_text(encoding="utf-8")
 

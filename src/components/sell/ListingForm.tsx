@@ -370,7 +370,7 @@ export function ListingForm({
         <div>
           <label htmlFor="description" className="field-label">Description</label>
           <textarea id="description" rows={5} maxLength={4000} className="input" value={v.description} onChange={(e) => set("description", e.target.value)} placeholder={wanted ? "Edition, condition you'd accept, when you need it…" : "What's included, how long you've used it, any defects…"} aria-invalid={Boolean(errors.description)} />
-          <p className="field-hint">Don&apos;t include your phone number, email or room number. Buyers contact you through UniMart Messages.</p>
+          <p className="field-hint">Don&apos;t include your phone number, email or room number. Buyers contact you through UniKart Messages.</p>
           {errors.description && <p className="field-error">{errors.description}</p>}
         </div>
         <details className="rounded-md border border-line bg-paper p-3">

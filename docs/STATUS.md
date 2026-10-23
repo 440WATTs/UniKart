@@ -41,6 +41,6 @@ tested; the React/server-action glue is type-checked but not run. Do this pass f
 - Google OAuth client (Google sign-in) — see `docs/SETUP.md` §5.
 - Resend (or other) email provider and a verified sender domain (institute email codes in production).
 - **Confirmation of NIT Sikkim's official email domain(s)** before enabling email verification.
-- Any statement of affiliation with NIT Sikkim: none is made; the footer says UniMart is independent.
+- Any statement of affiliation with NIT Sikkim: none is made; the footer says UniKart is independent.
 - **Legal review** of the draft Terms and Privacy notice (DPDP Act 2023), prohibited-items policy, dispute process,
   and of any future payments or auction feature.

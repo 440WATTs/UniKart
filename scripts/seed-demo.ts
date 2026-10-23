@@ -26,7 +26,7 @@ if (!url || !key) {
 }
 
 const db = createClient(url, key, { auth: { persistSession: false } });
-const DEMO_DOMAIN = "demo.unimart.invalid";
+const DEMO_DOMAIN = "demo.unikart.invalid";
 
 const SELLERS = [
   { email: `seller-one@${DEMO_DOMAIN}`, name: "Demo Seller One", type: "student" },

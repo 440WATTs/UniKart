@@ -32,7 +32,7 @@ export default async function OrdersPage() {
     <div>
       <PageTitle
         title="Offers & deals"
-        subtitle="A record of offers you've made and received. UniMart doesn't take payments: deals are completed in person."
+        subtitle="A record of offers you've made and received. UniKart doesn't take payments: deals are completed in person."
       />
       {offers.length === 0 ? (
         <EmptyState icon="🤝" title="No offers yet">

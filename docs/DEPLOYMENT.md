@@ -7,7 +7,7 @@ production database, and never copy production data into them.
 
 | | Development | Staging | Production |
 | --- | --- | --- | --- |
-| Supabase project | `unimart-dev` | `unimart-staging` | `unimart-prod` |
+| Supabase project | `unikart-dev` | `unikart-staging` | `unikart-prod` |
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | `https://staging.<domain>` | `https://<domain>` |
 | `ALLOW_DEMO_SEED` | `true` | `true` (demo data only) | unset |
 | Email provider | console log | Resend test domain | Resend verified domain |

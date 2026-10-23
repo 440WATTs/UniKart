@@ -47,7 +47,7 @@ export default async function SettingsPage() {
         <h2 className="mb-1 font-bold">Your data</h2>
         <p className="text-muted">
           Recent searches are stored only in this browser and can be cleared from the search box. See the{" "}
-          <a href="/privacy" className="link">privacy notice</a> for what UniMart stores.
+          <a href="/privacy" className="link">privacy notice</a> for what UniKart stores.
         </p>
       </section>
       <section className="rounded-lg border-2 border-danger bg-white p-5">

@@ -29,7 +29,7 @@ export function OfferButton({ listingId, pricePaise, title }: { listingId: strin
             <input id="amount" name="amount" inputMode="decimal" required className="input" placeholder={String(Math.round((pricePaise * 0.85) / 100))} />
           </div>
           <p className="rounded-md bg-butter p-3 text-xs leading-relaxed">
-            Offers are a way to negotiate. Nothing is paid through UniMart and an accepted offer is not a binding purchase:
+            Offers are a way to negotiate. Nothing is paid through UniKart and an accepted offer is not a binding purchase:
             it reserves the item while you both agree the final price and a safe place to meet on campus. Offers expire after 48 hours.
           </p>
           <SubmitButton className="btn-primary w-full" pendingText="Sending offer…">
@@ -91,7 +91,7 @@ export function ReportButton({
               <textarea id="details" name="details" rows={3} maxLength={2000} className="input" />
             </div>
             <p className="text-xs text-muted">
-              If you feel unsafe, contact campus security or local authorities first. Reports are reviewed by UniMart moderators.
+              If you feel unsafe, contact campus security or local authorities first. Reports are reviewed by UniKart moderators.
             </p>
             <SubmitButton className="btn-dark w-full" pendingText="Sending…">
               Send report

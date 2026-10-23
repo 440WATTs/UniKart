@@ -18,7 +18,7 @@ describe("safeNext (audit M1)", () => {
   for (const bad of ["//evil.com", "/\\evil.com", "/\t/evil.com", "/\n/evil.com", "/\r/evil.com", "https://evil.com", "evil.com", "javascript:alert(1)", "/%09/evil.com/../\\x", "", "/" + "a".repeat(600)]) {
     it(`rejects ${JSON.stringify(bad).slice(0, 40)}`, () => {
       const r = safeNext(bad, "/fallback");
-      assert.equal(new URL(r, "https://unimart.example").host, "unimart.example");
+      assert.equal(new URL(r, "https://unikart.example").host, "unikart.example");
       if (bad !== "/%09/evil.com/../\\x") assert.equal(r, "/fallback");
     });
   }
@@ -99,13 +99,13 @@ describe("production env validation (audit M11)", () => {
     NEXT_PUBLIC_SUPABASE_URL: "https://p.supabase.co",
     NEXT_PUBLIC_SUPABASE_ANON_KEY: "anon",
     SUPABASE_SERVICE_ROLE_KEY: "service",
-    NEXT_PUBLIC_SITE_URL: "https://unimart.example",
+    NEXT_PUBLIC_SITE_URL: "https://unikart.example",
     VERIFICATION_CODE_SECRET: "x".repeat(64),
   };
   it("accepts a complete configuration", () => assert.deepEqual(checkServerEnv(good), []));
   it("allows plain http only for localhost", () => {
     assert.deepEqual(checkServerEnv({ ...good, NEXT_PUBLIC_SITE_URL: "http://localhost:3000" }), []);
-    assert.equal(checkServerEnv({ ...good, NEXT_PUBLIC_SITE_URL: "http://unimart.example" }).length, 1);
+    assert.equal(checkServerEnv({ ...good, NEXT_PUBLIC_SITE_URL: "http://unikart.example" }).length, 1);
   });
   it("reports missing and unsafe values", () => {
     const p = checkServerEnv({ ...good, SUPABASE_SERVICE_ROLE_KEY: "", NEXT_PUBLIC_SITE_URL: "http://x", VERIFICATION_CODE_SECRET: "short", ALLOW_DEMO_SEED: "true" });

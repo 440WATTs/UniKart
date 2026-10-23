@@ -6,7 +6,7 @@ export const metadata = { title: "Contact" };
 export default function ContactPage() {
   return (
     <div className="container-page max-w-3xl py-8">
-      <PageTitle title="Contact UniMart" subtitle="Questions, feedback or a problem with a listing? Send us a message." />
+      <PageTitle title="Contact UniKart" subtitle="Questions, feedback or a problem with a listing? Send us a message." />
       <div className="grid gap-6 md:grid-cols-[1fr_240px]">
         <ContactForm />
         <aside className="card h-fit space-y-2 p-5 text-sm">

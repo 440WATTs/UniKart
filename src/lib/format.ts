@@ -55,7 +55,7 @@ export function safeNext(next: string | null | undefined, fallback = "/marketpla
   if (/[\u0000-\u001f\u007f\\]/.test(next)) return fallback;
   if (!next.startsWith("/") || next.startsWith("//")) return fallback;
   try {
-    const base = "https://unimart.invalid";
+    const base = "https://unikart.invalid";
     const url = new URL(next, base);
     if (url.origin !== base) return fallback;
     return url.pathname + url.search + url.hash;

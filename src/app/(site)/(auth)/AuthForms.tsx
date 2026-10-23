@@ -85,7 +85,7 @@ export function ResetPasswordForm() {
       <div className="space-y-4">
         <FormMessage state={state} />
         <Link href="/marketplace" className="btn-primary w-full">
-          Continue to UniMart
+          Continue to UniKart
         </Link>
       </div>
     );

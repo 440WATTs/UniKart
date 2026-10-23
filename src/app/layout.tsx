@@ -8,9 +8,9 @@ const pixelify = Pixelify_Sans({ subsets: ["latin"], weight: ["600", "700"], var
 const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-space-mono" });
 
 export const metadata: Metadata = {
-  title: { default: "UniMart – Your Campus. Your Marketplace.", template: "%s · UniMart" },
+  title: { default: "UniKart – Your Campus. Your Marketplace.", template: "%s · UniKart" },
   description: "Buy and sell with your campus community. Find what you need, sell what you no longer use.",
-  icons: { icon: "/brand/unimart-logo.png" },
+  icons: { icon: "/brand/unikart-logo.png" },
 };
 
 export const viewport: Viewport = {

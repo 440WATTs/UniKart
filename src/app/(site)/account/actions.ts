@@ -73,9 +73,9 @@ function hashCode(userId: string, code: string) {
 }
 
 const DB_MEMBERSHIP_ERRORS: Record<string, string> = {
-  institute_not_available: "This institute isn't available on UniMart.",
+  institute_not_available: "This institute isn't available on UniKart.",
   email_domain_not_accepted: "That address isn't an accepted institute email.",
-  email_already_used: "That institute email is already linked to another UniMart account.",
+  email_already_used: "That institute email is already linked to another UniKart account.",
   already_verified: "You're already verified.",
   membership_revoked: "Your membership was revoked. Contact support.",
   too_many_codes_for_email: "Too many codes were requested for that address. Please wait an hour and try again.",
@@ -114,8 +114,8 @@ export async function requestInstituteCode(_: ActionState, form: FormData): Prom
 
   const sent = await sendEmail({
     to: email.data,
-    subject: `Your UniMart verification code: ${code}`,
-    text: `Your code to verify your ${institute.display_name} membership on UniMart is ${code}.\n\nIt expires in 15 minutes. If you didn't request this, you can ignore this email.`,
+    subject: `Your UniKart verification code: ${code}`,
+    text: `Your code to verify your ${institute.display_name} membership on UniKart is ${code}.\n\nIt expires in 15 minutes. If you didn't request this, you can ignore this email.`,
   });
   if (sent.error) return { error: sent.error };
   revalidatePath("/account/institute");

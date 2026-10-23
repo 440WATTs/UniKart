@@ -1,4 +1,4 @@
-# UniMart setup
+# UniKart setup
 
 ## 1. Requirements
 
@@ -19,7 +19,7 @@ supabase link --project-ref YOUR-PROJECT-REF
 supabase db push
 ```
 
-or paste `supabase/migrations/20261022000001_unimart_core.sql` into **SQL Editor → New query** and run it once.
+or paste `supabase/migrations/20261022000001_unikart_core.sql` into **SQL Editor → New query** and run it once.
 
 The migration creates every table, row-level-security policy, function, the `listing-images` and `avatars`
 storage buckets, adds `messages` and `notifications` to Realtime, and inserts NIT Sikkim plus the categories.
@@ -35,7 +35,7 @@ cp .env.example .env.local
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API | yes |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | same page, `anon` key | yes (safe: RLS protects data) |
 | `SUPABASE_SERVICE_ROLE_KEY` | same page, `service_role` key | **no, server only** |
-| `NEXT_PUBLIC_SITE_URL` | your public URL, e.g. `https://unimart.example` | yes |
+| `NEXT_PUBLIC_SITE_URL` | your public URL, e.g. `https://unikart.example` | yes |
 | `NEXT_PUBLIC_DEFAULT_INSTITUTE_ID` | `nit-sikkim` | yes |
 | `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED` | `true` only after step 5 | yes |
 | `VERIFICATION_CODE_SECRET` | `openssl rand -hex 32` | no |
@@ -70,7 +70,7 @@ For production, configure custom SMTP in Supabase (the built-in sender is rate-l
 
 ## 5. Google sign-in
 
-1. Google Cloud Console → **APIs & Services → OAuth consent screen**: set app name "UniMart", support email,
+1. Google Cloud Console → **APIs & Services → OAuth consent screen**: set app name "UniKart", support email,
    authorised domain, scopes `email`, `profile`, `openid`.
 2. **Credentials → Create credentials → OAuth client ID → Web application**.
    - Authorised JavaScript origins: `http://localhost:3000`, `https://YOUR-DOMAIN`
@@ -113,7 +113,7 @@ npm run seed
 npm run seed:reset
 ```
 
-Demo users use the `@demo.unimart.invalid` domain, have no institute membership (so they never show a
+Demo users use the `@demo.unikart.invalid` domain, have no institute membership (so they never show a
 verified badge), and every demo listing is labelled **Demo** in the UI.
 
 ## 8. Deploy (Vercel or any Node host)
@@ -128,7 +128,8 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for environments, the checklist, monitoring, 
 
 ## 9. Updating the landing page
 
-`landing/original-index.html` is the untouched landing page from the UniKart repository.
+`landing/source-index.html` is the landing page from the UniKart repository (the only change from the
+original is the product name, UniMart → UniKart; the original is in git history).
 `public/landing.html` is generated from it:
 
 ```bash

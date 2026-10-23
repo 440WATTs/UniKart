@@ -8,7 +8,7 @@ export function AuthShell({ title, subtitle, children }: { title: string; subtit
       <div className="container-page flex justify-center py-10 sm:py-14">
         <div className="w-full max-w-md overflow-hidden rounded-lg border-2 border-ink bg-paper shadow-hard">
           {/* Title bar echoes the landing page's window chrome. */}
-          <div className="border-b-2 border-ink bg-chrome py-1 text-center font-mono text-sm font-bold">UniMart</div>
+          <div className="border-b-2 border-ink bg-chrome py-1 text-center font-mono text-sm font-bold">UniKart</div>
           <div className="p-6 sm:p-8">
             <h1 className="font-display text-2xl font-bold">{title}</h1>
             {subtitle && <p className="mt-1 text-sm text-ink-soft">{subtitle}</p>}

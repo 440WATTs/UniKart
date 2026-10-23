@@ -138,7 +138,7 @@ export default async function MarketplacePage() {
 
         {/* Non-functional preview: no cross-campus inventory exists yet. */}
         <section className="mt-12 overflow-hidden rounded-lg border-2 border-ink bg-paper shadow-hard" aria-labelledby="coming-soon">
-          <div className="border-b-2 border-ink bg-chrome py-1 text-center font-mono text-sm font-bold">UniMart</div>
+          <div className="border-b-2 border-ink bg-chrome py-1 text-center font-mono text-sm font-bold">UniKart</div>
           <div className="grid gap-4 p-6 sm:grid-cols-[1fr_auto] sm:items-center">
             <div>
               <h2 id="coming-soon" className="font-pixel text-xl font-bold">

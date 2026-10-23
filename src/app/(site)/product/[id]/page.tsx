@@ -195,7 +195,7 @@ export default async function ProductPage({ params, searchParams }: { params: Pr
                 <p className="truncate font-semibold">{seller?.display_name || "Former member"}</p>
                 <p className="text-xs text-muted">
                   {accountTypeLabel(seller?.account_type)}
-                  {seller?.created_at ? ` · on UniMart since ${formatDate(seller.created_at)}` : ""}
+                  {seller?.created_at ? ` · on UniKart since ${formatDate(seller.created_at)}` : ""}
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default async function ProductPage({ params, searchParams }: { params: Pr
               <ShieldIcon size={18} /> Trade safely
             </h2>
             <ul className="mt-2 list-disc space-y-1 pl-5">
-              <li>Keep the first conversation in UniMart Messages.</li>
+              <li>Keep the first conversation in UniKart Messages.</li>
               <li>Meet in a busy public spot on campus, in daylight.</li>
               <li>Check the item before you pay. Never pay in advance.</li>
               <li>Don&apos;t share passwords, OTPs or bank details.</li>

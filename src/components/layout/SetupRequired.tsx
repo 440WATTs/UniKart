@@ -5,7 +5,7 @@ export function SetupRequired() {
       <div className="panel mx-auto max-w-2xl p-6 sm:p-8">
         <h1 className="font-display text-2xl font-bold">Setup required</h1>
         <p className="mt-3 text-ink-soft">
-          UniMart needs a Supabase project for accounts, listings, photos and messages. The marketplace is not shown until
+          UniKart needs a Supabase project for accounts, listings, photos and messages. The marketplace is not shown until
           it is connected, so nothing here pretends to work.
         </p>
         <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-sm">

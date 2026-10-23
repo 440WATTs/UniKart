@@ -21,7 +21,7 @@ export default async function SellPage({ searchParams }: { searchParams: Promise
           <p className="mt-2 text-ink-soft">
             {viewer.isSuspended
               ? "Suspended accounts can't publish listings. Contact support if you think this is a mistake."
-              : "UniMart listings are only published by verified members of your institute. It takes a minute with your institute email."}
+              : "UniKart listings are only published by verified members of your institute. It takes a minute with your institute email."}
           </p>
           {!viewer.isSuspended && (
             <Link href="/account/institute" className="btn-primary mt-5">
